@@ -1,0 +1,77 @@
+$blue-primary: rgba(4, 6, 21, 0.78);
+$blue-50 : rgba(27, 25, 123, 0.50);
+$white: #fff;
+$red: #FF0000;
+$gradient-primary : linear-gradient(to right, #1B197B, #FF0000);
+$black-25 : rgba(0, 0, 0, 0.25);
+$black-35 : rgba(0, 0, 0, 0.35);
+$black-50 : rgba(0, 0, 0, 0.50);
+$gray-25 : rgba(217, 217, 217, 0.15);
+$gray-10 : rgba(217, 217, 217, 0.10);
+$gray-45 : rgba(217, 217, 217, 0.45);
+$gray-100 : rgba(217, 217, 217);
+$gray-secondary : rgba(138, 138, 138);
+
+
+$breakpoints : ("mobile": 480px,
+    "tabPortrait" : 992px,
+    // "tabLandscape":992px,
+    "laptop":1024px,
+    "desktop":1280px,
+    "wideDesktop" : 1441px);
+
+@mixin mediaMobile () {
+    @media (max-width:map-get($breakpoints, "mobile")) {
+        @content;
+    }
+}
+
+@mixin mediaLaptop () {
+    @media (max-width:map-get($breakpoints, "laptop")) {
+        @content;
+    }
+}
+
+@mixin mediaTabPortrait () {
+    @media (max-width:map-get($breakpoints, "tabPortrait")) {
+        @content;
+    }
+}
+
+@mixin mediaWideDesktop () {
+    @media (min-width:map-get($breakpoints, "wideDesktop")) {
+        @content;
+    }
+}
+
+@mixin mediaDesktop () {
+    @media (max-width:map-get($breakpoints, "desktop")) {
+        @content;
+    }
+}
+
+@function text-space ($sizeValue, $valueP) {
+    @return ((($sizeValue * $valueP)/100)*1px)
+}
+
+;
+
+@mixin flex ($content, $items, $direction) {
+    display: flex;
+    justify-content: $content;
+    align-items: $items;
+    flex-direction: $direction;
+}
+
+@mixin background-linear-primary {
+    background-image: $gradient-primary;
+    background-size: 100%;
+    opacity: 82%;
+}
+
+@mixin text-linear-primary {
+    background-clip: text;
+    color: transparent;
+    @include background-linear-primary();
+}
+

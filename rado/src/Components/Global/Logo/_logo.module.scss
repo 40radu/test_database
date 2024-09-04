@@ -1,0 +1,71 @@
+@import '../../../app/mixins';
+
+.logo {
+  @include flex (center, start, column);
+  width: fit-content;
+  height: fit-content;
+  row-gap: 6px;
+  cursor: pointer;
+  transition: 2s;
+  overflow: hidden;
+
+  @include mediaDesktop {
+    row-gap: 4px;
+  }
+
+  @include mediaLaptop {
+    row-gap: 2px;
+  }
+
+  img {
+    display: none;
+
+    @include mediaTabPortrait {
+      display: block;
+    }
+  }
+
+  &__top {
+    font-family: "indie Flower";
+    font-size: 11px;
+    font-weight: 400;
+    text-align: left;
+    // letter-spacing: text-space(11, 10);
+    letter-spacing: 1.76px;
+
+    // letter-spacing: 0.88px;
+    color: $red;
+    text-transform: uppercase;
+
+    @include mediaDesktop {
+      padding-top: 6px;
+      letter-spacing: 1.56px;
+    }
+
+    @include mediaLaptop {
+      font-size: 10px;
+    }
+
+    @include mediaTabPortrait {
+      display: none;
+    }
+  }
+
+  &__bottom {
+    font-size: 30px;
+    font-weight: 800;
+    @include text-linear-primary();
+    text-align: left;
+    letter-spacing: 2.76px;
+
+    @include mediaLaptop {
+      font-size: 29px;
+    }
+
+    @include mediaTabPortrait {
+      display: none;
+    }
+
+  }
+
+}

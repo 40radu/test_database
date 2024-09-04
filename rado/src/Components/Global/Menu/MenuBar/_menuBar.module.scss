@@ -1,0 +1,67 @@
+@import '../../../../app/mixins';
+
+.menu_bar {
+    // margin-left: 10px;
+    @include flex (center, center, row);
+    column-gap: 25px;
+    width: fit-content;
+    height: fit-content;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 5px;
+    // border: 1px solid white;
+    // transition: 2s;
+    // backdrop-filter: blur(2px);
+    display: none;
+
+    @media (max-width : 768px) {
+        display: block;
+    }
+
+    @include mediaMobile {
+        padding: 0;
+    }
+
+    img {
+
+        @include mediaDesktop {
+            width: 42px;
+        }
+
+        @include mediaTabPortrait {
+            width: 34px;
+            height: 32px;
+        }
+    }
+
+    p {
+        display: none;
+    }
+
+}
+
+.containerNavigation {
+    @include flex (center, center, column);
+    width: 100vw;
+    height: 65vh;
+    position: absolute;
+    right: -102%;
+    top: 0;
+    z-index: -20;
+    background-color: white;
+    border-left: 1px dotted rgba(0, 0, 0, 0.15);
+    margin-top: 100.5px;
+    padding-bottom: 20px;
+    box-shadow: 0px 3px 3px 0 rgb(0 0 0 / 15%);;
+
+    @include mediaTabPortrait {
+        margin-top: 70.5px;
+    }
+
+    @media (max-height : 480px) {
+        display: block;
+        padding-bottom: 70.5px;
+        height: 100vh;
+        overflow-y: scroll;
+    }
+}

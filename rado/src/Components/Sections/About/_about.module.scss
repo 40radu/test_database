@@ -1,0 +1,72 @@
+@import '../../../app/mixins';
+
+.about_section {
+    width: 100%;
+    height: 100vh;
+    @include flex (center, center, column);
+    row-gap: 35px;
+    padding-top: 150px;
+    overflow: hidden;
+
+    @include mediaTabPortrait {
+        height: fit-content;
+        row-gap: 30px;
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+
+    @include mediaMobile {
+        padding: 105px 0 60px 0;
+        row-gap: 5px;
+        height: fit-content;
+    }
+
+    .more_description {
+        width: 100%;
+        height: fit-content;
+        @include flex (center, center, column);
+        row-gap: 27px;
+
+
+
+        @include mediaTabPortrait {
+            padding: 0 45px;
+        }
+
+        @include mediaMobile {
+            padding: 25px 20px;
+            row-gap: 22px;
+        }
+
+        p {
+            width: 900px;
+            height: fit-content;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 700;
+            color: $blue-primary;
+            letter-spacing: 1px;
+
+            @include mediaTabPortrait {
+                width: 100%;
+                font-size: 14px;
+                letter-spacing: 0.93px;
+                text-align: left;
+            }
+
+            ;
+
+            @include mediaMobile {
+                font-size: 14px;
+                width: 100%;
+                text-align: left;
+            }
+        }
+    }
+
+    .flowerZone {
+        @include flex(center, center, row);
+        column-gap: 1px;
+        opacity: 0.9;
+    }
+}

@@ -1,0 +1,48 @@
+@import '../../../../app/mixins';
+
+.statut_resp {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    @include flex(center, center, column);
+    background-color: $black-25;
+    backdrop-filter: blur(2px);
+    z-index: 50;
+
+    div {
+        width: 300px;
+        height: fit-content;
+        border-radius: 5px;
+        background-color: $white;
+        @include flex(center, center, column);
+        padding: 25px 0;
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: text-space(20,4);
+        }
+
+        p {
+            text-align: center;
+            font-size: 14px;
+            color: $black-50;
+        }
+
+        button {
+            padding: 5px 10px 2px 10px;
+            background-color: $black-25;
+            font-size: 20px;
+            color: $white;
+            letter-spacing: text-space(20,2);
+            background-color: $black-25;
+            margin-top: 5px;
+            border: none;
+            &:hover {
+                background-color: $black-50;
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+@import '../../../app/mixins';
+
+.wrapper_scroll {
+    @include flex (center, center, column);
+    position: absolute;
+    bottom: 30px;
+    row-gap: 10px;
+
+    @include mediaTabPortrait {
+        display: none;
+    }
+    p {
+        font-size: 16px;
+        font-weight: 700;
+        -webkit-text-stroke: 1px $blue-primary;
+        color: transparent;
+        text-transform: uppercase;
+        letter-spacing: text-space(16,10);
+    }
+}

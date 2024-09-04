@@ -1,0 +1,154 @@
+@import '../../../app/mixins';
+
+.section_title {
+    width: fit-content;
+    height: fit-content;
+    @include flex (start, center, column);
+
+    h2 {
+        width: fit-content;
+        height: 139px;
+        font-size: 128px;
+        // font-size: valueVw(128);
+        font-weight: 800;
+        letter-spacing: text-space(128, 9);
+        color: $white;
+        -webkit-text-stroke: 1.5px $black-35;
+        text-transform: uppercase;
+        text-shadow: 5px 4px 1.5px $black-35;
+        position: relative;
+
+        @include mediaDesktop {
+            font-size: 120px;
+            height: 130px;
+
+        }
+
+        @include mediaLaptop {
+            font-size: 110px;
+            height: 120px;
+        }
+
+        @include mediaTabPortrait {
+            height: 105px;
+            font-size: 95px;
+            letter-spacing: text-space(100, 9);
+        }
+
+        @include mediaMobile {
+            height: 65px;
+            font-size: 55px;
+            letter-spacing: text-space(66, 7);
+            padding-right: 8px;
+            text-shadow: 4px 4px 1px $black-25;
+
+        }
+
+        @media (max-width : 320px) {
+            font-size: 53px;
+            height: 65px;
+        }
+    }
+
+    &__center {
+        width: 100%;
+        // height: 100%;
+        padding: 0 40px 0 20px;
+        @include flex (space-between, center, row);
+        column-gap: 20px;
+
+        @include mediaTabPortrait {
+            column-gap: 9px;
+            padding: 0 20px 0 10px;
+        }
+
+        @include mediaMobile {
+            column-gap: 10px;
+            padding: 0 8px 0 10px;
+        }
+
+        &::before {
+            content: "";
+            width: 100%;
+            height: 5px;
+            margin-top: 5px;
+            background-color: $gray-45;
+            border-bottom: 0.5px $blue-50;
+            border-style: dotted;
+
+            @include mediaTabPortrait {
+                margin-top: 2px;
+            }
+
+            @include mediaMobile {
+                height: 4px;
+                margin-top: 0;
+                padding-left: 8px;
+                width: 100%;
+            }
+
+        }
+
+        p {
+            width: fit-content;
+            height: 21px;
+            text-wrap: nowrap;
+            font-size: 16px;
+            letter-spacing: text-space(16, 8);
+            font-weight: 400;
+            color: $blue-primary;
+            @include flex (center, center, row);
+            column-gap: 17px;
+            text-transform: capitalize;
+
+            @include mediaTabPortrait {
+                letter-spacing: text-space(16, 6);
+                column-gap: 10px;
+            }
+
+            @include mediaMobile {
+                height: fit-content;
+                font-size: 10px;
+                letter-spacing: text-space(10, 8);
+                column-gap: 8px;
+            }
+
+            &::after {
+                content: "";
+                width: 10px;
+                height: 10px;
+                background-color: $red;
+                border-radius: 20px 0;
+
+                @include mediaMobile {
+                    width: 8px;
+                    height: 8px;
+                }
+            }
+        }
+    }
+
+    .descri {
+        @include text-linear-primary;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: text-space(12, 12);
+        text-transform: uppercase;
+        margin-top: 28px;
+        padding-right: 15px;
+
+        @include mediaLaptop {
+            margin-top: 17px;
+        }
+
+        @include mediaTabPortrait {
+            margin-top: 16px;
+        }
+
+        @include mediaMobile {
+            font-size: 9px;
+            letter-spacing: 0.96px;
+            margin-top: 15px;
+        }
+    }
+}

@@ -1,0 +1,75 @@
+@import '../../../../app/mixins';
+
+.logo_container {
+    width: 100px;
+    height: 100px;
+    @include flex(center, center, row);
+    border: 1px dashed $black-25;
+    border-radius: 50%;
+    position: relative;
+    transition: visibility 2s ease;
+
+    @include mediaLaptop {
+        width: 95px;
+        height: 95px;
+    }
+
+    @include mediaTabPortrait {
+        width: 85px;
+        height: 85px;
+    }
+
+    ;
+
+    @include mediaMobile {
+        width: fit-content;
+        height: fit-content;
+        padding: 18px;
+    }
+
+    ;
+
+    &:hover {
+        p {
+            visibility: visible;
+        }
+    }
+
+    img {
+
+        @include mediaLaptop {
+            scale: 0.9;
+        }
+
+        @include mediaTabPortrait {
+            scale: 0.8;
+        }
+
+        @include mediaMobile {
+            width: 46px;
+            height: 46px;
+        }
+    }
+
+    p {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        color: transparent;
+        font-weight: 800;
+        text-transform: capitalize;
+        visibility: hidden;
+        -webkit-text-stroke: 1px rgba(0, 0, 0, 0.45);
+        background-clip: text;
+        top: 108%;
+        letter-spacing: 0.66px;
+
+        @include mediaLaptop {
+            letter-spacing: 0.5px;
+        }
+
+        @include mediaMobile {
+            font-size: 14px;
+        }
+    }
+}

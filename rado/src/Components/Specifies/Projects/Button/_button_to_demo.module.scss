@@ -1,0 +1,18 @@
+@import '../../../../app/mixins';
+
+.button_container {
+    @include flex (center, center,row);
+    column-gap: 10px;
+    padding: 2px 40px;
+    border-radius: 20px;
+    border: $black-25 solid 1px;
+
+    p {
+        width: fit-content;
+        height: 20px;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: text-space(16,8);
+        color: $blue-primary;
+    }
+}

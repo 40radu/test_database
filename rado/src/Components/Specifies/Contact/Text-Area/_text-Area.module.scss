@@ -1,0 +1,47 @@
+@import '../../../../app/mixins';
+
+.text_area {
+    width: 460px;
+    min-height: 175px;
+    background-color: $gray-25;
+    padding: 28px 28px 28px 32px;
+    border-radius: 50px;
+    outline: none;
+    color: $blue-primary;
+    font-weight: 600;
+    letter-spacing: 0.9px;
+    color: rgba(4, 6, 21, 0.78);
+    font-weight: 700;
+    font-size: 16px;
+
+    @include mediaLaptop {
+        width: 410px;
+        padding-top: 24px;
+    }
+
+    @include mediaTabPortrait {
+        width: 570px;
+    }
+
+    @include mediaMobile {
+        width: 100%;
+        border-radius: 25px;
+        padding: 18px 24px;
+        height: 17px;
+        font-size: 14px;
+
+    }
+
+    &::placeholder {
+        color: $black-35;
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: capitalize;
+
+        @include mediaMobile {
+            font-size: 14px;
+            height: 17px;
+        }
+
+    }
+}

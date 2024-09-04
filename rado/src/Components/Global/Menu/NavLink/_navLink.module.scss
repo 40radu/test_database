@@ -1,0 +1,51 @@
+@import '../../../../app/mixins';
+
+.link_container {
+    text-decoration: none;
+    @include flex (center, center, row);
+    width: 100%;
+    height: fit-content;
+
+    @media (max-height : 480px) {
+        padding: 10px 15px;
+    }
+
+    p {
+        height: 145px;
+        color: white;
+        -webkit-text-stroke: 1.5px $black-35;
+        text-transform: uppercase;
+        text-shadow: 3px 3px 1px $black-35;
+        font-size: 128px;
+        font-weight: 800;
+        letter-spacing: text-space(128, 12);
+
+        @include mediaDesktop {
+            font-size: 120px;
+            height: 130px;
+            letter-spacing: text-space(110, 8);
+        }
+
+        @include mediaTabPortrait {
+            font-size: 95px;
+            letter-spacing: text-space(110, 8);
+            height: 114px;
+        }
+
+        @include mediaMobile {
+            font-size: 64px;
+            letter-spacing: 4.56px;
+            height: 75px;
+        }
+
+        @media (max-height : 480px) {
+            font-size: 60px;
+            height: 80px;
+        }
+
+        @media (max-width : 320px) {
+            font-size: 55px;
+        }
+    }
+
+}

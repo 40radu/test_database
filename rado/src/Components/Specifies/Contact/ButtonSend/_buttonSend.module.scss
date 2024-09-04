@@ -1,0 +1,107 @@
+@import '../../../../app/mixins';
+
+.btn_send {
+    width: 460px;
+    height: 55px;
+    @include flex(center, center, row);
+    column-gap: 15px;
+    @include background-linear-primary;
+    border-radius: 50px;
+    transition: 0.25s;
+    cursor: pointer;
+    outline-color: $black-35;
+
+    @include mediaLaptop {
+        width: 410px;
+        height: 51px;
+    }
+
+    @include mediaTabPortrait {
+        width: 570px;
+    }
+
+    @include mediaMobile{
+        width: 100%;
+        height: fit-content;
+        padding: 10px;
+        column-gap: 10px;
+    }
+
+    img {
+
+        @include mediaLaptop {
+            width: 21px;
+            height: 22px;
+        }
+        @include mediaMobile{
+            width: 18px;
+            height: 18px;
+        }
+
+    }
+
+    p {
+        height: 20px;
+        font-size: 17px;
+        letter-spacing: text-space(17, 12);
+        color: $white;
+        font-weight: 700;
+        text-transform: capitalize;
+
+        @include mediaLaptop {
+            font-size: 16px;
+        }
+
+        @include mediaMobile{
+            height: 17px;
+            font-size: 14px;
+            letter-spacing: text-space(14, 12);
+        }
+    }
+
+    &:hover {
+        width: 440px;
+        letter-spacing: text-space(17, 8);
+
+        @include mediaLaptop {
+            width: 390px;
+        }
+
+        @include mediaTabPortrait {
+            width: 550px;
+        }
+
+        @include mediaMobile{
+            width: 100%;
+            height: fit-content;
+            padding: 10px;
+            column-gap: 10px;
+        }
+    }
+
+    &:disabled {
+        opacity: 0.6;
+
+        &:hover {
+            width: 460px;
+            letter-spacing: text-space(17, 12);
+
+            @include mediaLaptop {
+                width: 410px;
+                height: 51px;
+            }
+
+            @include mediaTabPortrait {
+                width: 570px;
+            }
+
+            @include mediaMobile{
+                width: 100%;
+                height: fit-content;
+                padding: 10px;
+                column-gap: 10px;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,148 @@
+@import "../../../app/mixins";
+
+.contact_section {
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 100px;
+    @include flex (start, center, column);
+    row-gap: 65px;
+    position: relative;
+
+    @include mediaTabPortrait {
+        row-gap: 20px;
+        padding-bottom: 20px;
+    }
+
+    @include mediaMobile {
+        padding-top: 105px;
+        row-gap: 15px;
+    }
+
+    .container_form {
+        @include flex(center, center, row);
+        column-gap: 180px;
+
+        @include mediaWideDesktop {
+            column-gap: 300px;
+        }
+
+        @include mediaLaptop {
+            column-gap: 20px;
+        }
+
+        @include mediaTabPortrait {
+            flex-direction: column;
+            row-gap: 50px;
+        }
+
+        @include mediaMobile {
+            width: 100%;
+            row-gap: 40px;
+        }
+
+        .image_section {
+            width: fit-content;
+            height: fit-content;
+            position: relative;
+            padding-bottom: 50px;
+
+            img {
+                @include mediaMobile {
+                    width: 234px;
+                    height: 215px;
+                }
+            }
+
+            p {
+                @include text-linear-primary;
+                font-size: 10px;
+                font-weight: 700;
+                letter-spacing: text-space(10, 18);
+                position: absolute;
+                bottom: auto;
+                left: 105px;
+
+                @include mediaMobile {
+                    font-size: 8px;
+                    letter-spacing: text-space(8, 18);
+                    left: 35px;
+                }
+
+            }
+        }
+
+        .socialMedia {
+            @include flex (center, center, row);
+            column-gap: 18px;
+            display: none;
+
+            @include mediaDesktop {
+                display: flex;
+                position: absolute;
+                bottom: 75px;
+            }
+
+            @include mediaTabPortrait {
+                display: flex;
+                position: static;
+            }
+
+            @media (max-width:425px) {
+                display: flex;
+            }
+
+            &::before {
+                content: '';
+                width: 90px;
+                height: 1px;
+                background-color: $black-25;
+            }
+
+            &::after {
+                content: '';
+                width: 90px;
+                height: 1px;
+                background-color: $black-25;
+            }
+
+            img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        .form {
+            @include flex (center, center, column);
+            row-gap: 10px;
+
+            @include mediaMobile {
+                padding: 0 20px;
+                width: 100%;
+            }
+
+            .errorEmail {
+                @include flex (center, center,column);
+                color: #ff1c1cd6;
+                font-size: 12px;
+                font-weight: 400;
+                letter-spacing: 0.89px;
+            }
+
+            .required {
+                @extend .errorEmail;
+                font-size: 10px;
+                color: rgba(138, 138, 138);
+                width: 100%;
+                @include flex(start, start, row);
+                padding-left: 10px;
+
+                &::before {
+                    content : "* ";
+                    color: #ff1c1cd6;
+                }
+            }
+        }
+    }
+
+
+}

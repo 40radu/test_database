@@ -1,0 +1,70 @@
+@import '../../../app/mixins';
+
+.bannerLeft {
+    min-height: 100vh;
+    width: 50%;
+    @include flex (end, center, row);
+    background-color: $white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding-right: 7.5px;
+
+    p {
+        -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.75);
+        color: $white;
+        font-size: 55px;
+        font-weight: 800;
+
+        @include mediaDesktop {
+            font-size: 46px;
+        }
+
+        @include mediaTabPortrait {
+            font-size: 42px;
+        }
+
+        @include mediaMobile {
+            font-size: 28px;
+            -webkit-text-stroke: 1px rgba(0, 0, 0, 0.75);
+        }
+
+        @media (max-width: 320px) {
+            font-size: 22px;
+        }
+    }
+}
+
+.bannerRight {
+    @extend .bannerLeft;
+    justify-content: start;
+    left: 50%;
+    background-color: #f8fafc;
+    border: none;
+    padding-right: 0;
+    padding-left: 7.5px;
+
+    p {
+
+        @include text-linear-primary;
+        -webkit-text-stroke: 0;
+        opacity: 100%;
+
+        @include mediaDesktop {
+            font-size: 46px;
+        }
+
+        @include mediaTabPortrait {
+            font-size: 42px;
+        }
+
+        @include mediaMobile {
+            font-size: 28px;
+        }
+
+        @media (max-width: 320px) {
+            font-size: 22px;
+        }
+    }
+}

@@ -1,0 +1,154 @@
+@import '../../../app/mixins';
+
+.section_home {
+    width: 100%;
+    min-height: 100vh;
+    @include flex (center, center, row);
+    padding-bottom: 100px;
+    column-gap: 100px;
+    position: relative;
+    background-color: white;
+
+    @media (min-width : 1441px) {
+        column-gap: 150px;
+    }
+
+    @include mediaDesktop {
+        overflow-x: hidden;
+    }
+
+    @include mediaLaptop {
+        column-gap: 30px;
+        padding-bottom: 70px;
+    }
+
+    @include mediaTabPortrait {
+        flex-direction: column;
+        row-gap: 30px;
+        padding-top: 84px 36px 20px;
+    }
+
+    @media (max-height : 480px) {
+        padding-top: 0;
+    }
+
+    @include mediaMobile{
+        height: fit-content;
+        row-gap: 20px;
+        padding: 84px 0 60px 0;
+    }
+
+    .img {
+        margin-bottom: 60px;
+
+        @include mediaTabPortrait {
+            margin-bottom: 20px;
+        }
+
+        @include mediaMobile{
+            width: 234px;
+            height: 215px;
+        }
+    }
+
+    &__right {
+        // margin-left: 20px;
+        width: fit-content;
+        height: fit-content;
+        @include flex (start, start, column);
+        row-gap: 20px;
+
+        @include mediaLaptop {
+            row-gap: 12px;
+        }
+
+        @include mediaTabPortrait {
+            width: 100%;
+            @include flex (center, center, column);
+            padding: 0 20px;
+        }
+
+        h1 {
+            height: fit-content;
+            width: 644px;
+            line-height: 65px;
+            font-size: 63px;
+            font-weight: 800;
+            letter-spacing: text-space(60, 17);
+            @include text-linear-primary;
+
+            @media (min-width : 1441px) {
+                font-size: 69px;
+                width: 682px;
+            }
+
+            @include mediaDesktop {
+                font-size: 58px;
+                letter-spacing: text-space(58, 8);
+            }
+
+            @include mediaLaptop {
+                width: fit-content;
+                max-width: 845px;
+                font-size: 54px;
+                line-height: 60px;
+            }
+
+            @include mediaTabPortrait {
+                font-size: 55px;
+                text-align: center;
+                letter-spacing: 6px;
+                width: 520px;
+            }
+
+            @include mediaMobile{
+                font-size: 32px;
+                width: 100%;
+                line-height: 32px;
+                letter-spacing: text-space(28, 16);
+            }
+        }
+
+        p {
+            width: 530px;
+            height: fit-content;
+            font-size: 16px;
+            font-weight: 700;
+            color: $gray-secondary;
+            letter-spacing: 1px;
+
+            span {
+                @include text-linear-primary;
+            }
+
+            @include mediaLaptop {
+                font-size: 14.2px;
+            }
+
+            @include mediaTabPortrait {
+                font-size: 14px;
+                letter-spacing: 0.93px;
+                max-width: 510px;
+                width: fit-content;
+            }
+
+            @include mediaMobile{
+                width: 100%;
+            }
+        }
+
+        .container_button {
+            @include flex (start, center, row);
+            column-gap: 45px;
+            margin-top: 20px;
+
+            @include mediaMobile{
+                column-gap: 20px;
+                margin-top: 8px;
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+    }
+}
