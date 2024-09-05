@@ -16,7 +16,7 @@ import Input from '@/Components/Global/InputForm/InputForm'
 import TextArea from '@/Components/Specifies/Contact/Text-Area/TextArea'
 import ButtonSend from '@/Components/Specifies/Contact/ButtonSend/ButtonSend'
 import StatutResponse from '@/Components/Specifies/Contact/StatutResponse/StatutResponse'
-import axios, { all } from 'axios'
+// import axios, { all } from 'axios'
 interface IFormData {
     name: string;
     email: string;

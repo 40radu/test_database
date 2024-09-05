@@ -16,7 +16,8 @@
 
     }
     @include mediaMobile{
-        padding: 105px 0 75px 0;
+        padding: 105px 0 125px;
+        row-gap: 40px;
     }
 
     .skills_containers {
@@ -72,7 +73,7 @@
             }
 
             @include mediaTabPortrait {
-                column-gap: 70px;
+                column-gap: 92px;
             }
 
             @include mediaMobile{
@@ -98,7 +99,7 @@
             padding: 6px 12px 4px 12px;
             border-radius: 5px;
             position: absolute;
-            bottom: 0;
+            bottom: 40px;
             left: 50%;
             transform: translate(-50%, -50%);
             display: none;

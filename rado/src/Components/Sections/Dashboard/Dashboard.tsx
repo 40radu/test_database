@@ -42,12 +42,12 @@ function Dashboard() {
         gsap.from(leftContainer.current, {
             delay: 0.8,
             duration: 1,
-            scale: 0.8
+            scale: 0.84
         })
         gsap.from(rightContainer.current, {
             delay: 0.8,
             duration: 1,
-            scale: 0.8
+            scale: 0.84
         })
 
     }, { scope: homeSection })
@@ -63,7 +63,7 @@ function Dashboard() {
 
             <div className={styles.section_home__right} ref={rightContainer}>
                 <h1 translate="no">Front-End React Developer</h1>
-                <p>Hi&#128075; , i'am <span className={styles.name}>Radonirina</span> and
+                <p>Hi <span className={styles.emoji}>&#128075;</span>, i'am <span className={styles.name}>Radonirina</span> and
                     welcome to my portfolio. It will help you get to know me better and remember, we can build something amazing together! </p>
                 <div className={styles.container_button}>
                     <a href="cv.pdf" download="cv_portfolio_rado.pdf">

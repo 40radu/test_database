@@ -27,17 +27,17 @@
         }
 
         @include mediaLaptop {
-            column-gap: 20px;
+            column-gap: 50px;
         }
 
         @include mediaTabPortrait {
             flex-direction: column;
-            row-gap: 50px;
+            row-gap: 15px;
         }
 
         @include mediaMobile {
             width: 100%;
-            row-gap: 40px;
+            row-gap: 12px;
         }
 
         .image_section {
@@ -45,6 +45,10 @@
             height: fit-content;
             position: relative;
             padding-bottom: 50px;
+
+            @include mediaTabPortrait {
+                padding-bottom: 10px;
+            }
 
             img {
                 @include mediaMobile {
